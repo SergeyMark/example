@@ -1,0 +1,87 @@
+/* СЕТКА */
+
+
+/* :root{
+    --gap: 50px;
+    --iternal: 3;
+    --column: 4;
+}
+
+
+body{
+    background: rgb(214, 81, 92);
+
+    font-size: 24px;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+h3,p{
+    margin: 0;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.main-item{
+    max-width: 370px;
+
+    flex-basis: calc((100% - var(--gap) * var(--iternal)) / var(--column));
+}
+
+.main-group{
+    padding: 50px;
+    text-align: center;
+
+    background: #fff;
+}
+
+.main-title{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: calc(45 / 30);
+
+    text-transform: uppercase;
+
+    margin-bottom: 50px;
+}
+
+.main-text{
+    margin-bottom: 50px;
+}
+
+.main-link{
+    display: inline-block;
+    padding: 15px 30px;
+
+    font-size: 18px;
+
+    text-transform: uppercase;
+
+    background: rgb(232, 74, 72);
+
+    border-radius: 30px;
+
+} */
+
+
+
+/* СЕТКА */

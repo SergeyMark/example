@@ -85,3 +85,65 @@ h3,p{
 
 
 /* СЕТКА */
+
+/* FLEX */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.flex-container{
+    border: 10px solid rgb(195, 0, 255);
+}
+
+.flex-item{
+    font-size: 24px;
+    line-height: calc(30 / 24);
+    font-weight: 700;
+
+    padding: 10px;
+    
+    color: #fff;
+    
+    text-align: center;
+    text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.2);
+
+
+}
+
+.item1{
+    background-color: red;
+}
+.item2 {
+    background-color: aqua;
+}
+.item3 {
+    background-color: blue;
+}
+.item4 {
+    background-color: blueviolet;
+}
+.item5 {
+    background-color: burlywood;
+}
+.item6 {
+    background-color: brown;
+}
+.item7 {
+    background-color:yellowgreen;
+}
+.item8 {
+    background-color: tomato;
+}
+
+.flex-container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-flow: ; */
+}
+
+.flex-item{
+    width: 50%;
+}

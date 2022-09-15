@@ -1,15 +1,26 @@
 /* СЕТКА */
-
-
-/* :root{
+:root{
+    /* grid */
     --gap: 50px;
-    --iternal: 3;
-    --column: 4;
+    --iternal: 2;
+    --column: 3;
+    /* color */
+    --white-cl: #fff;
+    --color-pink: rgb(232, 74, 72);
+    /* BG-color */
+    --main-bg-cl: rgb(232, 74, 72);
 }
 
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 body{
-    background: rgb(214, 81, 92);
+    padding: 50px 0;
+
+    background-color: rgb(214, 81, 92);
 
     font-size: 24px;
 }
@@ -42,13 +53,13 @@ h3,p{
 }
 
 .main-item{
-    max-width: 370px;
+    /* max-width: 370px; */
 
     flex-basis: calc((100% - var(--gap) * var(--iternal)) / var(--column));
 }
 
 .main-group{
-    padding: 50px;
+    padding: 30px;
     text-align: center;
 
     background: #fff;
@@ -80,79 +91,167 @@ h3,p{
 
     border-radius: 30px;
 
-} */
+}
 
 
 
 /* СЕТКА */
 
-/* FLEX */
+/* MODAL */
 
-/* *{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-.flex-container{
-    border: 10px solid rgb(195, 0, 255);
-}
-
-.flex-item{
-    font-size: 24px;
-    line-height: calc(30 / 24);
-    font-weight: 700;
-
-    padding: 10px;
-    
-    color: #fff;
-    
-    text-align: center;
-    text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.2);
-
-
-}
-
-.item1{
-    background-color: red;
-}
-.item2 {
-    background-color: aqua;
-}
-.item3 {
-    background-color: blue;
-}
-.item4 {
-    background-color: blueviolet;
-}
-.item5 {
-    background-color: burlywood;
-}
-.item6 {
-    background-color: brown;
-}
-.item7 {
-    background-color:yellowgreen;
-}
-.item8 {
-    background-color: tomato;
-}
-
-.flex-container{
+.btn-group{
     display: flex;
-    flex-wrap: wrap; 
-    flex-flow: ; 
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 50px 0;
 }
 
-.flex-item{
-    width: 50%;
-} */
+.btn-title{
+    font-size: 30px;
+    line-height: calc(40 / 30);
+    letter-spacing: 0.3em;
 
+    text-align: center;
+    text-transform: uppercase;
 
-/* FORMA  */
+    color: var(--white-cl);
 
-.form-group {}
+    margin-bottom: 20px;
+}
 
-.labal-wrap {}
+.anim-arrow{
+    margin-bottom: 20px;
+}
 
-.input-text {}
+.btn{
+    display: block;
+    margin: 0 auto;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: calc(24 / 18);
+
+    text-transform: uppercase;
+
+    padding: 12px 25px;
+
+    color: var(--color-pink);
+    background-color: var(--white-cl);
+
+    border: 1px solid var(--color-pink);
+
+    cursor: pointer;
+
+    transition: color 250ms linear,
+                background-color 250ms linear,
+                border 250ms linear;
+}
+
+.btn:hover{
+    color: var(--white-cl);
+    background-color: var(--color-pink);
+    
+    border: 1px solid var(--white-cl);
+}
+
+/* ANIMETED ARROW */
+
+.anim-arrow{
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    fill: var(--white-cl);
+
+    animation: slaider-img 2000ms linear infinite;;
+}
+
+@keyframes slaider-img {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    25% {
+        opacity: 0.5;
+        transform: translateY(30px);
+    }
+
+    50%{
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+
+    75%{
+        opacity: 0.15;
+        transform: translateY(-30px) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) rotate(180deg);
+    }
+
+    
+}
+
+/* MODAL WINDOW */
+
+.blackdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 500px;
+
+    background-color: var(--white-cl);
+    border-radius: 5px;
+}
+
+.btn-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    border: 2px solid var(--color-pink);
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition: border 250ms linear,
+                fill 250ms linear;
+}
+
+.icon-close{
+    fill: var(--color-pink);
+}
+
+.btn-close:hover{
+    border: 2px solid black;
+}
+
+.btn-close:hover .icon-close{
+    fill: black;
+}

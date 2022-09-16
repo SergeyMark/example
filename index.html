@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <!-- сетка!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
     <div class="container">
+      <!-- сетка!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <ul class="main-section">
         <li class="main-item">
           <div class="main-group">
@@ -121,21 +120,43 @@
         <svg class="anim-arrow" width="30" height="30">
           <use href="./down-icon.svg#down-icon"></use>
         </svg>
-        <button class="btn" type="button">Жмакни</button>
+        <button class="btn" type="button" data-modal-open>Жмакни</button>
       </div>
     </div>
 
     <!-- MODAL WINDOW -->
 
-    <div class="blackdrop">
+    <div class="blackdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="btn-close" type="button">
+        <strong class="modal-title">Online-booking</strong>
+        <!-- forma -->
+        <form class="modal-form">
+          <label class="modal-label">
+            <input class="input" type="text" name="name" placeholder=" " />
+            <span class="modal-label-span">name*</span>
+          </label>
+          <label class="modal-label">
+            <input class="input" type="tel" name="tel" placeholder=" " />
+            <span class="modal-label-span">phone*</span>
+          </label>
+          <label class="modal-label-textarea">
+            <textarea
+              class="textarea"
+              name="message"
+              placeholder=" "
+            ></textarea>
+            <span class="modal-span-textarea">message</span>
+          </label>
+          <button class="btn-send" type="submit">send</button>
+        </form>
+        <!-- close modal -->
+        <button class="btn-close" type="button" data-modal-close>
           <svg class="icon-close" width="20" height="20">
             <use href="./down-icon.svg#icon-close"></use>
           </svg>
         </button>
       </div>
     </div>
-    <script src="./"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

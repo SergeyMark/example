@@ -1,7 +1,6 @@
-/* СЕТКА */
 :root{
     /* grid */
-    --gap: 50px;
+    --gap: 30px;
     --iternal: 2;
     --column: 3;
     /* color */
@@ -9,9 +8,13 @@
     --color-pink: rgb(232, 74, 72);
     --input-cl: rgba(157, 164, 189, 0.4);
     --btn-form-cl: #FF6C00;
+    --logo-cl: #6743AC;
     /* BG-color */
     --main-bg-cl: rgb(232, 74, 72);
     --bg-modal: #191C26;
+    --menu-bg: rgba(103, 67, 172, 0.2);
+    /* Border */
+    --border-card: #EEEEEE;
 }
 
 *{
@@ -21,11 +24,9 @@
 }
 
 body{
-    padding: 50px 0;
-
-    background-color: rgb(214, 81, 92);
-
     font-size: 24px;
+
+    padding-top: 114px;
 }
 
 ul{
@@ -49,6 +50,72 @@ h3,p{
     padding: 0 15px;
 }
 
+/* TOP MENU */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+
+    background-color: var(--menu-bg);
+    backdrop-filter: blur(4px);
+}
+
+.wrapper-flex{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: calc(64 / 30);
+    text-transform: uppercase;
+    
+    color: var(--logo-cl);
+}
+
+.main-menu{
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+.menu-item{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: calc(22 / 18);
+    text-transform: uppercase;
+    
+    color: #000000;
+}
+
+.menu-item:not(:last-child){
+    margin-right: 55px;
+}
+
+.menu-link{
+    display: block;
+
+    padding: 43px 0;
+
+    transition: color 250ms linear;
+}
+
+.menu-link:hover{
+    color: var(--logo-cl);
+}
+
+/* СЕТКА */
+
+.grid{
+    padding: 30px 0;
+}
+
 .main-section{
     display: flex;
     flex-wrap: wrap;
@@ -57,6 +124,11 @@ h3,p{
 
 .main-item{
     /* max-width: 370px; */
+
+    border: 1px solid var(--border-card);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%),
+                0px 4px 4px rgb(0 0 0 / 6%),
+                1px 4px 6px rgb(0 0 0 / 16%);
 
     flex-basis: calc((100% - var(--gap) * var(--iternal)) / var(--column));
 }
@@ -87,16 +159,26 @@ h3,p{
     padding: 15px 30px;
 
     font-size: 18px;
+    font-weight: 600;
 
     text-transform: uppercase;
 
-    background: rgb(232, 74, 72);
-
+    background-color: transparent;
+    color: var(--logo-cl);
+    
+    border: 1px solid var(--logo-cl);
     border-radius: 30px;
 
+    transition: background-color 250ms linear,
+                border 250ms linear,
+                color 250ms linear;
 }
 
-
+.main-link:hover{
+    background-color: var(--logo-cl);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
 
 /* СЕТКА */
 
@@ -118,7 +200,7 @@ h3,p{
     text-align: center;
     text-transform: uppercase;
 
-    color: var(--white-cl);
+    color: #000000;
 
     margin-bottom: 20px;
 }
@@ -164,7 +246,7 @@ h3,p{
     margin: 0 auto;
     margin-bottom: 20px;
 
-    fill: var(--white-cl);
+    fill: #000000;
 
     animation: slaider-img 2000ms linear infinite;;
 }
@@ -281,7 +363,7 @@ h3,p{
     letter-spacing: 0.05em;
 
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     text-align: center;
     
@@ -360,10 +442,22 @@ h3,p{
     top: 10%;
     left: 10px;
 
-    transition: transform 250ms linear;
+    transition: transform 250ms linear,
+                color 250ms linear,
+                font-size 250ms linear;
+
  }
 
- .btn-send {
+ .textarea:focus ~ .modal-span-textarea,
+ .input:focus ~ .modal-label-span,
+ .input:not(:placeholder-shown) + .modal-label-span,
+ .textarea:not(:placeholder-shown) + .modal-span-textarea{
+    transform: translateY(-25px);
+    color: var(--white-cl);
+    font-size: 18px;
+}
+
+.btn-send {
     display: block;
     margin: 0 auto;
 
@@ -379,23 +473,17 @@ h3,p{
     line-height: calc(16 / 12);
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    
+
     color: var(--white-cl);
     background-color: transparent;
 
     transition: color 250ms linear,
-                border 250ms linear;
+        border 250ms linear;
 
     cursor: pointer;
- }
+}
 
- .btn-send:hover{
+.btn-send:hover {
     border: 1px solid var(--white-cl);
     color: var(--btn-form-cl);
- }
-
- .textarea:focus ~ .modal-span-textarea,
- .input:focus ~ .modal-label-span{
-    transform: translateY(-20px);
-    color: var(--white-cl);
 }

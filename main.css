@@ -44,10 +44,23 @@ h3,p{
     margin: 0;
 }
 
+img{
+    display: block;
+}
+
 .container{
     width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.section{
+    padding: 30px 0;
+
+    border-top: 1px solid var(--border-card);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%),
+            0px 4px 4px rgb(0 0 0 / 6%),
+            1px 4px 6px rgb(0 0 0 / 16%);
 }
 
 /* TOP MENU */
@@ -486,4 +499,119 @@ h3,p{
 .btn-send:hover {
     border: 1px solid var(--white-cl);
     color: var(--btn-form-cl);
+}
+
+
+/* CARD SOCIAL */
+
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 117px;
+}
+
+.card-item{
+    flex-basis: calc((100% - 234px) / 3);
+}
+
+.card-social-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.card-social-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    color: var(--logo-cl);
+
+    transition: color 250ms linear,
+                background-color 250ms linear,
+                border 250ms linear,
+                box-shadow 250ms linear;
+}
+
+.card-icon{
+    fill: currentColor;
+}
+
+.card-social-link:hover{
+    color: #ffffff;
+    background-color: var(--logo-cl);
+    border: 1px solid var(--border-card);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%),
+            0px 4px 4px rgb(0 0 0 / 6%),
+            1px 4px 6px rgb(0 0 0 / 16%);
+}
+
+/* SLAIDER */
+
+.container-slider {
+    position: relative;
+
+    margin: 0 auto;
+
+    max-width: 500px;
+    min-height: 300px;
+    
+    overflow: hidden;
+}
+
+.photo-slider {
+    position: absolute;
+
+    animation: round 17s infinite;
+    opacity: 0;
+    width: 100%
+}
+
+@keyframes round {
+    25% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
+}
+
+img:nth-child(1) {
+    animation-delay: 12s
+}
+
+img:nth-child(2) {
+    animation-delay: 8s
+}
+
+img:nth-child(3) {
+    animation-delay: 4s
+}
+
+img:nth-child(4) {
+    animation-delay: 0
+}
+
+@media(min-width:0px) and (max-width:320px) {
+    .container_slider_css {
+        width: 80%;
+        height: 190px
+    }
+}
+
+@media(min-width:321px) and (max-width:480px) {
+    .container_slider_css {
+        width: 80%;
+        height: 190px
+    }
 }

@@ -615,3 +615,14 @@ img:nth-child(4) {
         height: 190px
     }
 }
+
+/* MODAL */
+
+.modal-film{
+    margin: 0 auto;
+    width: 806px;
+
+    padding: 40px 12px;
+
+    background-color: #fff;
+}
